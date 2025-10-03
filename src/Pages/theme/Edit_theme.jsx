@@ -72,6 +72,7 @@ const Create_product = () => {
                 featured: pro?.is_featured,
                 newArrival: pro?.is_new_arrival,
                 best_seller: pro?.is_best_seller,
+                is_free: pro?.is_free,
             })
             if (pro?.is_active) {
 
@@ -341,6 +342,7 @@ const Create_product = () => {
             formData.append("is_sale", states.sale ? "True" : "False"); // Index represents the new order
             formData.append("is_new_arrival", states.newArrival ? "True" : "False"); // Index represents the new order
             formData.append("is_featured", states.featured ? "True" : "False"); // Index represents the new order
+            formData.append("is_free", states.is_free ? "True" : "False"); // Index represents the new order
             formData.append("is_best_seller", states.best_seller ? "True" : "False"); // Index represents the new order
             formData.append("is_active", homeActive ? "True" : "False");
             if (orderingUpdates.length > 0) {
@@ -436,6 +438,7 @@ const Create_product = () => {
         sale: false,
         featured: false,
         newArrival: false,
+        is_free: false,
         best_seller: false,
     });
 
@@ -452,6 +455,7 @@ const Create_product = () => {
         { key: "featured", label: "Is Featured" },
         { key: "newArrival", label: "Is New Arrival" },
         { key: "best_seller", label: "Is Best Seller" },
+        { key: "is_free", label: "Is Free" },
     ];
 
     console.log(states);

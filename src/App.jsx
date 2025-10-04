@@ -37,6 +37,7 @@ import Create_blog from './Pages/Blog/Create_blog';
 import Edit_blog from './Pages/Blog/Edit_blog';
 
 
+import Contact from './Pages/contact/contact';
 
 
 
@@ -98,6 +99,7 @@ const App = () => {
         <Route path="/create_blog" element={<Create_blog />} />
         <Route path="/edit_blog" element={<Edit_blog />} />
 
+        <Route path="/contact" element={<Contact />} />
 
 
 

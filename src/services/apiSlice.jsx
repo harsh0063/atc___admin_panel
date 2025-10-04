@@ -497,7 +497,19 @@ export const apiSlice = createApi({
       invalidatesTags: ["Blog"],
     }),
 
+   getcontact: builder.query({
+      query: ({ size, page, search } = {}) => {
+        const params = new URLSearchParams();
 
+        if (size) params.append('page_size', size);
+        if (page) params.append('page', page);
+        if (search) params.append('search_query', search);
+
+        return `view-contact/?${params.toString()}`;
+      },
+      providesTags: ['contact'],
+
+    }),
 
   }),
 });
@@ -570,7 +582,8 @@ export const {
   useAddBlogMutation,
   useEditBlogMutation,
   useDeleteBlogMutation,
-
+  
+  useGetcontactQuery,
 
 
 
